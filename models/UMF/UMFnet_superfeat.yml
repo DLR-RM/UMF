@@ -1,0 +1,46 @@
+
+model:
+  name: "UMF" 
+  pretrained:  null
+  mode: "superfeatures" # superfeatures, ransac, fusion
+  smoothing: false
+  local_feat_weights: [0.02, 0.02]  # pc, img
+  local_attn_weights:  [0.01, 0.01]
+  local_feat_margin:  [1.1, 1.1] 
+
+  visual:
+    architecture: resnet50  # Backbone network
+    pretrained: "" # path to the pretrained model
+    out_dim: 128 # The output dimension
+    image_size: 224
+    input_dim: 3
+
+    local_superfeatures:
+      T: 6
+      N: 64
+      dim: 1024
+      out_dim: 128
+
+  point_cloud:
+    architecture: VoxelNet  # Backbone network
+    pretrained: ""
+    out_dim: 128 # The output dimension
+    input_dim: 3 # The input dimension
+    grid_size:  [200, 200, 200]
+    max_num_points_per_voxel: 5
+    num_point_features: 3
+    max_num_voxels: 4096
+    voxel_size: [0.01, 0.01, 0.01]
+    range: [-1, -1, -1, 1, 1, 1] # xmin, ymin, zmin, xmax, ymax, zmax
+
+    local_superfeatures:
+      T: 6
+      N: 128
+      dim: 256
+      out_dim: 32
+
+  fusion:
+    d_attn: 512
+    d_embedding: 256
+    num_heads: 8
+    final_block: fc   #fc mpl null

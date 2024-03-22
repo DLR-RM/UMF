@@ -1,0 +1,42 @@
+
+model:
+  name: "UMF" 
+  pretrained: null
+  mode: "ransac" # superfeatures, ransac, fusion
+  smoothing: false
+  local_feat_margin:  [0.4, 0.4]
+
+  visual:
+    architecture: resnet50  # Backbone network
+    pretrained: null
+    out_dim: 256 
+    image_size: 224
+    input_dim: 3
+
+    local_ransac:
+      num_heads: 8
+      hidden_dim: 512
+      dim: 128
+
+  point_cloud:
+    architecture: VoxelNet  # Backbone network
+    pretrained: null
+    out_dim: 256 
+    input_dim: 3
+    grid_size:  [200, 200, 200]
+    max_num_points_per_voxel: 5
+    num_point_features: 3
+    max_num_voxels: 4096
+    voxel_size: [0.01, 0.01, 0.01]
+    range: [-1, -1, -1, 1, 1, 1] # xmin, ymin, zmin, xmax, ymax, zmax
+
+    local_ransac:
+      num_heads: 8
+      hidden_dim: 256
+      dim: 32
+    
+  fusion:
+    d_attn: 512
+    d_embedding: 256
+    num_heads: 8
+    final_block: fc   #fc mpl null

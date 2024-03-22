@@ -1,0 +1,32 @@
+DEFAULT:
+  num_points: 4096
+  use_rgb: True
+  use_cloud: True
+  dataset: "robotcar" # robotcar or etna
+  dataset_folder: /home/user/benchmark_datasets
+  image_path: /home/user/images4lidar_small20
+
+TRAIN:
+  num_workers: 26
+  train_step: 'single_step' # single_step, multistaged
+  optimizer: "AdamW"
+  scheduler:  "CosineAnnealingLR" # MultiStepLR OneCycleLR  CosineAnnealingLR  LinearWarmupCosineAnnealingLR
+  batch_size: 32 # 64
+  val_batch_size: 88 # 256
+  batch_size_limit: 88 # 2048
+  batch_expansion_rate: 1.4
+  batch_expansion_th: 0.5       
+  lr: 1e-5
+  image_lr: 1e-5
+  epochs: 200
+  scheduler_milestones: [10, 30, 60]
+  aug_mode: 1
+  weight_decay: 5e-4
+  warmup_epochs: 5
+  loss: MultiBatchHardTripletLossWithMasksAugmented
+  weights: [0.5, 0.5, 0.1]
+  normalize_embeddings: False
+  margin: 0.2
+  train_file: training_queries_baseline.pickle
+  val_file: validation_queries_baseline.pickle
+                                                                                                                                                                                                                                            
