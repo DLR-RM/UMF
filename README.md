@@ -33,9 +33,9 @@ The following Python packages are required:
 
 
 
-*  install [HOW](https://github.com/gtolias/how)
+*  install [HOW](https://github.com/albertogarci/how)
 ```
-git clone https://github.com/gtolias/how
+git clone https://github.com/albertogarci/how
 export PYTHONPATH=${PYTHONPATH}:$(realpath how)
 ```
 
