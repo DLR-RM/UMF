@@ -9,14 +9,16 @@ Perceptual aliasing and weak textures pose significant challenges to the task of
 ### Citation
 If you find our work useful, please cite us:
 ```
-@article{garcíahernández2024unifying,
-      title={Unifying Local and Global Multimodal Features for Place Recognition in Aliased and Low-Texture Environments}, 
-      author={Alberto García-Hernández and Riccardo Giubilato and Klaus H. Strobl and Javier Civera and Rudolph Triebel},
-      year={2024},
-      eprint={2403.13395},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
-}
+@INPROCEEDINGS{10611563,
+  author={García-Hernández, Alberto and Giubilato, Riccardo and Strobl, Klaus H. and Civera, Javier and Triebel, Rudolph},
+  booktitle={2024 IEEE International Conference on Robotics and Automation (ICRA)}, 
+  title={Unifying Local and Global Multimodal Features for Place Recognition in Aliased and Low-Texture Environments}, 
+  year={2024},
+  volume={},
+  number={},
+  pages={3991-3998},
+  keywords={Visualization;Simultaneous localization and mapping;Laser radar;Codes;Fuses;Transformers;Data models},
+  doi={10.1109/ICRA57147.2024.10611563}}
 ```
 
 
