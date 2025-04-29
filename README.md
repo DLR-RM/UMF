@@ -100,3 +100,6 @@ cd eval
 python evaluate.py --config ../config/config_base.yaml --model_config ../models/UMFnet_ransac.yml --weights <path_to_weights>
 
 ```
+
+### S3LI Dataset
+In order to use the S3LI dataset to generate train and test samples, check out this repo: https://github.com/DLR-RM/s3li-toolkit
